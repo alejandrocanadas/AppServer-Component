@@ -25,14 +25,32 @@ public class CompraEntity {
     private String cedulaCliente;
     private Double valorTotal;
 
-    @Enumerated(EnumType.STRING)
-    private EstadoCompra estado;
+    private String estado;
 
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaActualizacion;
 
     @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<DetalleCompraEntity> detalles;
+
+    //constructores
+    public CompraEntity() {
+    }
+
+    public CompraEntity(String numeroCompra, String cedulaCliente, Double valorTotal, String estado,
+            LocalDateTime fechaCreacion, LocalDateTime fechaActualizacion, List<DetalleCompraEntity> detalles) {
+        this.numeroCompra = numeroCompra;
+        this.cedulaCliente = cedulaCliente;
+        this.valorTotal = valorTotal;
+        this.estado = estado;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaActualizacion = fechaActualizacion;
+        this.detalles = detalles;
+    }
+
+    public CompraEntity(String string, String cedulaCliente2, double total) {
+        //TODO Auto-generated constructor stub
+    }
 
     public Long getId() {
         return id;
@@ -66,11 +84,11 @@ public class CompraEntity {
         this.valorTotal = valorTotal;
     }
 
-    public EstadoCompra getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(EstadoCompra estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 

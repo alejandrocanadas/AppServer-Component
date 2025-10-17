@@ -1,37 +1,42 @@
 package com.example.tvp_appserver.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.Data;
 
 @Data
 public class CompraRequestDTO {
-    private String id_compra;
-    private String id_paquete;
-    private String id_usuario;
-    private String estado_compra; 
 
-    public String getId_compra() {
-        return id_compra;
-    }
+    private String numeroCompra;
+    private String cedulaCliente;
+    private Double valorTotal;
+    private String estado; 
+    private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaActualizacion;
+    private List<DetalleCompraDTO> detalles;
 
-    public void setId_compra(String id_compra) {
-        this.id_compra = id_compra;
-    }
-    
-    public String getId_paquete() {
-        return id_paquete;
-    }
-    
-    public void setId_paquete(String id_paquete) {
-        this.id_paquete = id_paquete;
-    }
-    
-    public String getId_usuario() {
-        return id_usuario;
-    }
-    
-    public void setId_usuario(String id_usuario) {
-        this.id_usuario = id_usuario;
-    }
+    public CompraRequestDTO() {}
+
+    // Getters y Setters
+    public String getNumeroCompra() { return numeroCompra; }
+    public void setNumeroCompra(String numeroCompra) { this.numeroCompra = numeroCompra; }
+
+    public String getCedulaCliente() { return cedulaCliente; }
+    public void setCedulaCliente(String cedulaCliente) { this.cedulaCliente = cedulaCliente; }
+
+    public Double getValorTotal() { return valorTotal; }
+    public void setValorTotal(Double valorTotal) { this.valorTotal = valorTotal; }
+
+    public String getEstado() { return estado; }
+    public void setEstado(String estado) { this.estado = estado; }
+
+    public LocalDateTime getFechaCreacion() { return fechaCreacion; }
+    public void setFechaCreacion(LocalDateTime fechaCreacion) { this.fechaCreacion = fechaCreacion; }
+
+    public LocalDateTime getFechaActualizacion() { return fechaActualizacion; }
+    public void setFechaActualizacion(LocalDateTime fechaActualizacion) { this.fechaActualizacion = fechaActualizacion; }
+
+    public List<DetalleCompraDTO> getDetalles() { return detalles; }
+    public void setDetalles(List<DetalleCompraDTO> detalles) { this.detalles = detalles; }
 }

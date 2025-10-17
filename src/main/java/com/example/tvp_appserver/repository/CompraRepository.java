@@ -1,5 +1,9 @@
 package com.example.tvp_appserver.repository;
 
-public class CompraRepository {
-    
-}
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.tvp_appserver.model.CompraEntity;
+
+public interface CompraRepository extends JpaRepository<CompraEntity, Long> {
+
+} 
